@@ -31,8 +31,21 @@
         <script defer>
             const edgeTierScript = document.getElementById("edgetier-script");
             edgeTierScript.addEventListener("load", () => {
+                // Attempt to open the chat. Even if no agents are online, this won't cause an error.
                 EdgeTierChat.setOptions({ hideCloseButton: true, hideMinimiseButton: true });
                 EdgeTierChat.open();
+                EdgeTierChat.isAvailable((error, data) => {
+                    if (error) {
+                        console.error(error);
+                        return;
+                    }
+
+                    if (!data.isAvailable) {
+                        const newElement = document.createElement("p");
+                        newElement.textContent = "The widget is unavailable. There are currently no agents online.";
+                        document.body.appendChild(newElement);
+                    }
+                });
             });
         </script>
     </head>
