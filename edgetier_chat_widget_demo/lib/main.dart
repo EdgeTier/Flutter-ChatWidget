@@ -178,10 +178,7 @@ Failed to load chat widget: ${error.errorType}
       body:
           controller == null
               ? CircularProgressIndicator()
-              : SizedBox(
-                height: 300,
-                child: WebViewWidget(controller: controller!),
-              ),
+              : SizedBox.expand(child: WebViewWidget(controller: controller!)),
     );
   }
 }
