@@ -13,8 +13,13 @@ The demo application is built using Flutter and demonstrates how to integrate a 
 
 ## Local Setup
 
-Setting up for both platforms requires a few hours and a lot of network bandwidth + disk space (15GB+). 
+Setting up for both platforms requires a few hours and a lot of network bandwidth + disk space (15GB+).
 The following steps are for macOS.
+
+### Prerequisite code change
+The following change is needed before the application will work.
+
+In the [chat-window-demo.html](https://github.com/EdgeTier/Flutter-ChatWidget/blob/main/edgetier_chat_widget_demo/assets/www/chat-window-demo.html#L27) file, replace `CLIENT` with the correct script name.
 
 ### Set up Flutter
 
@@ -25,10 +30,10 @@ Open this project in VSCode with Flutter extension installed. Then run Cmd+Shift
 1. Download XCode for iOS
 2. Install cocoapods
 
-   ```bash
-   brew install cocoapods
-   brew link --overwrite cocoapods
-   ```
+    ```bash
+    brew install cocoapods
+    brew link --overwrite cocoapods
+    ```
 
 3. Open XCode and install the iOS simulator
 4. Open the project in VSCode, open `main.dart` and do Run - select iOS device to create the emulator.
@@ -39,16 +44,16 @@ Open this project in VSCode with Flutter extension installed. Then run Cmd+Shift
 2. Install the Android emulator, SDK and SDK command linetools
 3. Install Java and add the CLI tools to PATH
 
-   ```bash
-   curl -s "https://get.sdkman.io" | bash
-   sdk install java 23-open
-   ```
+    ```bash
+    curl -s "https://get.sdkman.io" | bash
+    sdk install java 23-open
+    ```
 
-   Add CLI-tools to PATH by adding the following line to `~/.zshenv`:
+    Add CLI-tools to PATH by adding the following line to `~/.zshenv`:
 
-   ```bash
-   # Android CLI tools
-   export PATH=~/Library/Android/sdk/cmdline-tools/latest/bin:$PATH
-   ```
+    ```bash
+    # Android CLI tools
+    export PATH=~/Library/Android/sdk/cmdline-tools/latest/bin:$PATH
+    ```
 
 4. Open the project in VSCode, open `main.dart` and do Run - select Android device to create the emulator.
