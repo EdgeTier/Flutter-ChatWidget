@@ -16,7 +16,9 @@ The demo application is built using Flutter and demonstrates how to integrate a 
 Setting up for both platforms requires a few hours and a lot of network bandwidth + disk space (15GB+).
 The following steps are for macOS.
 
-### Prerequisite
+### Prerequisite code change
+The following change is needed before the application will work.
+
 In the [chat-window-demo.html](https://github.com/EdgeTier/Flutter-ChatWidget/blob/main/edgetier_chat_widget_demo/assets/www/chat-window-demo.html#L27) file, replace `CLIENT` with the correct script name.
 
 ### Set up Flutter
